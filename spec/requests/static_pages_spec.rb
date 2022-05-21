@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "StaticPages", type: :request do
-  let(:base_title) { "Ruby on Rails Tutorial Sample App" }
 
   describe "root" do
     it "正常にレスポンスを返すこと" do
@@ -10,7 +9,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it "titleがRuby on Rails Tutorial Sample Appであること" do
       get root_path
-      expect(response.body).to include "<title>#{base_title}</title>"
+      expect(response.body).to include full_title('')
     end
   end
 
@@ -21,7 +20,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it "Help | Ruby on Rails Tutorial Sample Appが含まれること" do
       get help_path
-      expect(response.body).to include "Help | #{base_title}"
+      expect(response.body).to include full_title('Help')
     end
   end
 
@@ -32,7 +31,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it "About | Ruby on Rails Tutorial Sample Appが含まれること" do
       get about_path
-      expect(response.body).to include "About | #{base_title}"
+      expect(response.body).to include full_title('About')
     end
   end
 
@@ -43,7 +42,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it "Contact | Ruby on Rails Tutorial Sample Appが含まれること" do
       get contact_path
-      expect(response.body).to include "Contact | #{base_title}"
+      expect(response.body).to include full_title('Contact')
     end
   end
 
