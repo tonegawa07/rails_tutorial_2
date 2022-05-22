@@ -5,6 +5,8 @@ ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.5', '>= 6.1.5.1'
+# Use bcrypt for hashed password
+gem 'bcrypt', '3.1.13'
 # Use bootstrap
 gem 'bootstrap-sass', '3.4.1'
 # Use mysql as the database for Active Record
